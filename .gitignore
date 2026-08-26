@@ -5,3 +5,4 @@ TEST.py
 *- acceder informations.png
 *.odt
 *.pdf
+.~lock.*

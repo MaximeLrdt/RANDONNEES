@@ -1,0 +1,14 @@
+{
+  "nom": "BOUCLE DES CASCADES DU HERISSON",
+  "code": "39003",
+  "distance_km": 5.9,
+  "duree_minutes": 120,
+  "denivele_positif_m": 207,
+
+  "depart": {
+    "lieu_dit": "Val Dessus",
+    "adresse": "39130 Ménétrux-en-Joux",
+    "latitude": 46.6155, 
+    "longitude": 5.8451
+  }
+}

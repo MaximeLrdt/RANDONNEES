@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Randonnée</title>
+
+
+    <style>
+
+
+        /* =====================================================
+           VERSION MOBILE UNIQUEMENT
+           ===================================================== */
+
+        html {
+
+            width: 100%;
+
+            margin: 0;
+
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            width: 100%;
+
+            margin: 0;
+
+            padding: 0;
+
+            background: #f5f5f5;
+
+            color: #222;
+        }
+
+
+        /* =====================================================
+           CONTENEUR PRINCIPAL
+           ===================================================== */
+
+        .conteneur {
+
+            width: 100%;
+
+            min-height: 100dvh;
+
+            box-sizing: border-box;
+
+            padding: 10px;
+
+            background: white;
+
+            border-radius: 0;
+
+            box-shadow: none;
+        }
+
+
+        /* =====================================================
+           TITRE
+           ===================================================== */
+
+        h1 {
+
+            text-align: center;
+
+            margin-top: 0;
+
+            margin-bottom: 20px;
+
+            line-height: 1.2;
+        }
+
+
+        /* Titre principal
+           Arial 21, gras */
+
+        .titre-principal {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            font-style: normal;
+        }
+
+
+        /* Partie entre parenthèses
+           Arial 11, italique
+           Nouvelle ligne */
+
+        .titre-parentheses {
+
+            display: block;
+
+            font-family: Arial, sans-serif;
+
+            font-size: 11px;
+
+            font-weight: normal;
+
+            font-style: italic;
+        }
+
+
+        /* =====================================================
+           CARACTÉRISTIQUES
+           ===================================================== */
+
+        .caracteristiques {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap: 10px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .caracteristique {
+
+            text-align: center;
+
+            background: #f0f0f0;
+
+            padding: 12px 1px;
+
+            border-radius: 8px;
+
+            min-width: 0;
+        }
+
+
+        /* Valeurs :
+           7,5 km
+           2 h 30 min
+           95 m */
+
+        .valeur {
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+
+        /* Libellés */
+
+        .libelle {
+
+            font-size: 13px;
+
+            margin-top: 5px;
+
+            color: #666;
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           POINT DE DÉPART
+           ===================================================== */
+
+        .depart {
+
+            margin-bottom: 20px;
+        }
+
+
+        .depart-infos {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 8px;
+
+            background: #f0f0f0;
+
+            padding: 15px;
+
+            border-radius: 8px;
+        }
+
+
+        .depart-texte {
+
+            flex: 1;
+
+            min-width: 0;
+
+            overflow: hidden;
+        }
+
+
+        /* POINT DE DEPART
+           Arial 15, gras */
+
+        .depart h2 {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            font-style: normal;
+
+            margin: 0 0 10px 0;
+
+            color: #222;
+
+            letter-spacing: 0;
+
+            white-space: nowrap;
+        }
+
+
+        /* Informations
+           Arial 13, normal */
+
+        .depart p {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+            font-style: normal;
+
+            margin: 6px 0;
+
+            color: #222;
+
+            white-space: nowrap;
+        }
+
+
+        .depart #lieu {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+            white-space: nowrap;
+        }
+
+
+        .depart #adresse {
+
+            font-family: Arial, sans-serif;
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+            color: #222;
+
+            white-space: nowrap;
+        }
+
+
+		/* =====================================================
+		   BOUTONS GOOGLE MAPS / WAZE
+		   ===================================================== */
+
+		.depart-navigation {
+
+			display: flex;
+
+			gap: 10px;
+
+			flex-shrink: 0;
+		}
+
+
+		/* Boutons */
+
+		.bouton-navigation {
+
+			display: flex;
+
+			align-items: center;
+
+			justify-content: center;
+
+			width: 60px;
+
+			height: 60px;
+
+			border: none;
+
+			border-radius: 12px;
+
+			cursor: pointer;
+
+			box-sizing: border-box;
+
+			transition:
+				transform 0.15s ease,
+				box-shadow 0.15s ease;
+		}
+
+
+		/* Google Maps : fond blanc */
+
+		#boutonMaps {
+
+			background: white;
+			padding: 6px;
+		}
+
+
+		/* Waze : pas de fond blanc */
+
+		#boutonWaze {
+
+			background: transparent;
+			padding: 0;
+		}
+
+
+		/* Effet au toucher */
+
+		.bouton-navigation:hover {
+
+			transform: scale(1.05);
+		}
+
+
+		.bouton-navigation:active {
+
+			transform: scale(0.95);
+		}
+
+
+		/* Logos */
+
+		.logo-navigation {
+
+			width: 100%;
+
+			height: 100%;
+
+			object-fit: contain;
+
+			display: block;
+		}
+
+
+        /* =====================================================
+           CARTE
+           ===================================================== */
+
+        .carte-conteneur {
+
+            position: relative;
+
+            width: 100%;
+
+            margin-bottom: 15px;
+        }
+
+
+        .carte {
+
+            display: block;
+
+            width: 100%;
+
+            height: auto;
+
+            border-radius: 8px;
+        }
+
+
+        /* =====================================================
+           BOUTON PLEIN ÉCRAN DE LA CARTE
+           ===================================================== */
+
+        .bouton-plein-ecran {
+
+            position: absolute;
+
+            top: 8px;
+
+            right: 8px;
+
+            padding: 8px 10px;
+
+            background: rgba(0,0,0,0.75);
+
+            color: white;
+
+            border: none;
+
+            border-radius: 6px;
+
+            font-size: 20px;
+
+            cursor: pointer;
+        }
+
+
+        .bouton-plein-ecran:hover {
+
+            opacity: 0.8;
+        }
+
+
+        /* =====================================================
+           CARTE EN PLEIN ÉCRAN
+           ===================================================== */
+
+        .carte-conteneur.plein-ecran {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100vw;
+
+            height: 100dvh;
+
+            margin: 0;
+
+            padding: 0;
+
+            background: black;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .carte-conteneur.plein-ecran .carte {
+
+            max-width: 100%;
+
+            max-height: 100%;
+
+            width: auto;
+
+            height: auto;
+
+            object-fit: contain;
+
+            border-radius: 0;
+        }
+
+
+        /* =====================================================
+           BOUTON GPX
+           ===================================================== */
+
+        .bouton {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 10px;
+
+            text-align: center;
+
+            padding: 14px;
+
+            margin-top: 10px;
+
+            margin-bottom: 10px;
+
+            background: #222;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            border: none;
+
+            width: 100%;
+
+            box-sizing: border-box;
+        }
+
+
+        .bouton:hover {
+
+            opacity: 0.8;
+        }
+
+
+        /* =====================================================
+           ICÔNE TÉLÉCHARGEMENT
+           ===================================================== */
+
+        .icone-telechargement {
+
+            width: 22px;
+
+            height: 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        /* =====================================================
+           ERREUR
+           ===================================================== */
+
+        .erreur {
+
+            text-align: center;
+
+            color: #b00000;
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="conteneur">
+
+
+    <!-- =====================================================
+         TITRE
+         ===================================================== -->
+
+    <h1 id="nom">
+
+        Chargement...
+
+    </h1>
+
+
+    <!-- =====================================================
+         CARACTÉRISTIQUES
+         ===================================================== -->
+
+    <div class="caracteristiques">
+
+
+        <div class="caracteristique">
+
+            <div
+                class="valeur"
+                id="distance"
+            >
+                -
+            </div>
+
+            <div class="libelle">
+                Distance
+            </div>
+
+        </div>
+
+
+        <div class="caracteristique">
+
+            <div
+                class="valeur"
+                id="duree"
+            >
+                -
+            </div>
+
+            <div class="libelle">
+                Durée
+            </div>
+
+        </div>
+
+
+        <div class="caracteristique">
+
+            <div
+                class="valeur"
+                id="denivele"
+            >
+                -
+            </div>
+
+            <div class="libelle">
+                Dénivelé positif
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         POINT DE DÉPART
+         ===================================================== -->
+
+    <div class="depart">
+
+        <div class="depart-infos">
+
+
+            <div class="depart-texte">
+
+
+                <h2>
+                    POINT DE DEPART
+                </h2>
+
+
+                <p>
+
+                    <strong id="lieu">
+                        -
+                    </strong>
+
+                </p>
+
+
+                <p id="adresse">
+                    -
+                </p>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 BOUTONS MAPS / WAZE
+                 ================================================= -->
+
+            <div class="depart-navigation">
+
+
+                <!-- GOOGLE MAPS -->
+
+                <button
+                    id="boutonMaps"
+                    class="bouton-navigation"
+                    type="button"
+                    aria-label="Ouvrir Google Maps"
+                >
+
+                    <img
+                        class="logo-navigation"
+                        src="logos/maps-icon.png"
+                        alt="Google Maps"
+                    >
+
+                </button>
+
+
+                <!-- WAZE -->
+
+                <button
+                    id="boutonWaze"
+                    class="bouton-navigation"
+                    type="button"
+                    aria-label="Ouvrir Waze"
+                >
+
+                    <img
+                        class="logo-navigation"
+                        src="logos/waze-icon.png"
+                        alt="Waze"
+                    >
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CARTE
+         ===================================================== -->
+
+    <div
+        id="carteConteneur"
+        class="carte-conteneur"
+    >
+
+
+        <img
+            id="carte"
+            class="carte"
+            alt="Carte de la randonnée"
+        >
+
+
+        <button
+            id="boutonPleinEcran"
+            class="bouton-plein-ecran"
+            type="button"
+        >
+
+            ⛶
+
+        </button>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         TÉLÉCHARGEMENT GPX
+         ===================================================== -->
+
+    <a
+        id="telecharger"
+        class="bouton"
+    >
+
+
+        <span class="icone-telechargement">
+
+
+            <svg
+                viewBox="0 0 24 24"
+                width="22"
+                height="22"
+                fill="none"
+                stroke="white"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+
+                <path d="M12 3v12"></path>
+
+                <path d="M7 10l5 5 5-5"></path>
+
+                <path d="M5 21h14"></path>
+
+            </svg>
+
+
+        </span>
+
+
+        Télécharger la trace GPX
+
+
+    </a>
+
+
+    <!-- =====================================================
+         MESSAGE D'ERREUR
+         ===================================================== -->
+
+    <p
+        id="erreur"
+        class="erreur"
+    ></p>
+
+
+</div>
+
+
+<script>
+
+
+/* =========================================================
+   CHARGEMENT DE LA RANDONNÉE
+   ========================================================= */
+
+async function chargerRandonnee() {
+
+
+    const parametres =
+        new URLSearchParams(
+            window.location.search
+        );
+
+
+    const code =
+        parametres.get("rando");
+
+
+    if (!code) {
+
+        afficherErreur(
+            "Aucune randonnée n'a été indiquée."
+        );
+
+        return;
+    }
+
+
+    /* =====================================================
+       CORRESPONDANCE DES DOSSIERS
+       ===================================================== */
+
+    const chemins = {
+
+
+        "39001":
+            "39 - JURA/39001 - LAC DE NARLAY/",
+
+
+        "39002":
+            "39 - JURA/39002 - LACS D'ILAY + GRAND MACLU +  PETIT MACLU/"
+
+
+    };
+
+
+    const dossier =
+        chemins[code];
+
+
+    if (!dossier) {
+
+        afficherErreur(
+            "Randonnée introuvable."
+        );
+
+        return;
+    }
+
+
+    try {
+
+
+        /* =================================================
+           CHARGEMENT DU JSON
+           ================================================= */
+
+        const reponse =
+            await fetch(
+                dossier + code + ".json"
+            );
+
+
+        if (!reponse.ok) {
+
+            throw new Error(
+                "JSON introuvable"
+            );
+        }
+
+
+        const rando =
+            await reponse.json();
+
+
+        /* =================================================
+           TITRE
+           ================================================= */
+
+        document.title =
+            rando.nom;
+
+
+        const titre =
+            document.getElementById("nom");
+
+
+        const nom =
+            rando.nom;
+
+
+        const positionParenthese =
+            nom.indexOf("(");
+
+
+        if (positionParenthese !== -1) {
+
+
+            const partiePrincipale =
+                nom.substring(
+                    0,
+                    positionParenthese
+                ).trim();
+
+
+            const partieParentheses =
+                nom.substring(
+                    positionParenthese
+                ).trim();
+
+
+            titre.innerHTML =
+
+                '<span class="titre-principal">'
+                +
+                partiePrincipale
+                +
+                '</span>'
+                +
+
+                '<span class="titre-parentheses">'
+                +
+                partieParentheses
+                +
+                '</span>';
+
+
+        } else {
+
+
+            titre.innerHTML =
+
+                '<span class="titre-principal">'
+                +
+                nom
+                +
+                '</span>';
+
+        }
+
+
+        /* =================================================
+           DISTANCE
+           ================================================= */
+
+        document.getElementById("distance")
+            .textContent =
+            rando.distance_km
+            +
+            " km";
+
+
+        /* =================================================
+           DURÉE
+           ================================================= */
+
+        const heures =
+            Math.floor(
+                rando.duree_minutes / 60
+            );
+
+
+        const minutes =
+            rando.duree_minutes % 60;
+
+
+        let dureeTexte = "";
+
+
+        if (heures > 0) {
+
+            dureeTexte =
+                heures
+                +
+                " h";
+        }
+
+
+        if (minutes > 0) {
+
+
+            if (dureeTexte !== "") {
+
+                dureeTexte += " ";
+            }
+
+
+            dureeTexte +=
+                minutes
+                +
+                " min";
+        }
+
+
+        document.getElementById("duree")
+            .textContent =
+            dureeTexte;
+
+
+        /* =================================================
+           DÉNIVELÉ
+           ================================================= */
+
+        document.getElementById("denivele")
+            .textContent =
+            rando.denivele_positif_m
+            +
+            " m";
+
+
+        /* =================================================
+           POINT DE DÉPART
+           ================================================= */
+
+        document.getElementById("lieu")
+            .textContent =
+            rando.depart.lieu_dit;
+
+
+        document.getElementById("adresse")
+            .textContent =
+            rando.depart.adresse;
+
+
+        /* =================================================
+           CARTE
+           ================================================= */
+
+        document.getElementById("carte").src =
+
+            dossier
+            +
+            code
+            +
+            "1 - carte.png";
+
+
+        /* =================================================
+           TRACE GPX
+           ================================================= */
+
+        const lienGPX =
+
+            dossier
+            +
+            code
+            +
+            "2 - trace.gpx";
+
+
+        document.getElementById("telecharger")
+            .href =
+            lienGPX;
+
+
+        document.getElementById("telecharger")
+            .download =
+            code
+            +
+            "2 - trace.gpx";
+
+
+        /* =================================================
+           COORDONNÉES
+           ================================================= */
+
+        const latitude =
+            rando.depart.latitude;
+
+
+        const longitude =
+            rando.depart.longitude;
+
+
+        /* =================================================
+           NAVIGATION
+           ================================================= */
+
+        configurerNavigation(
+            latitude,
+            longitude
+        );
+
+
+    }
+
+
+    catch (erreur) {
+
+
+        afficherErreur(
+            "Impossible de charger les informations de la randonnée."
+        );
+
+
+        console.error(erreur);
+
+    }
+
+}
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+function configurerNavigation(
+    latitude,
+    longitude
+) {
+
+
+    const boutonMaps =
+        document.getElementById(
+            "boutonMaps"
+        );
+
+
+    const boutonWaze =
+        document.getElementById(
+            "boutonWaze"
+        );
+
+
+    /* =====================================================
+       GOOGLE MAPS
+       ===================================================== */
+
+    boutonMaps.onclick =
+        function() {
+
+
+            const url =
+
+                "https://www.google.com/maps/dir/?api=1&destination="
+                +
+                latitude
+                +
+                ","
+                +
+                longitude;
+
+
+            window.location.href =
+                url;
+
+        };
+
+
+    /* =====================================================
+       WAZE
+       ===================================================== */
+
+    boutonWaze.onclick =
+        function() {
+
+
+            const url =
+
+                "https://www.waze.com/ul?ll="
+                +
+                latitude
+                +
+                ","
+                +
+                longitude
+                +
+                "&navigate=yes";
+
+
+            window.location.href =
+                url;
+
+        };
+
+}
+
+
+/* =========================================================
+   PLEIN ÉCRAN DE LA CARTE
+   ========================================================= */
+
+const carteConteneur =
+    document.getElementById(
+        "carteConteneur"
+    );
+
+
+const boutonPleinEcran =
+    document.getElementById(
+        "boutonPleinEcran"
+    );
+
+
+boutonPleinEcran.onclick =
+    function() {
+
+
+        carteConteneur.classList.toggle(
+            "plein-ecran"
+        );
+
+
+        if (
+
+            carteConteneur.classList.contains(
+                "plein-ecran"
+            )
+
+        ) {
+
+
+            boutonPleinEcran.textContent =
+                "✕";
+
+
+        } else {
+
+
+            boutonPleinEcran.textContent =
+                "⛶";
+
+        }
+
+    };
+
+
+/* =========================================================
+   ERREUR
+   ========================================================= */
+
+function afficherErreur(message) {
+
+
+    document.getElementById("nom")
+        .textContent =
+        "Erreur";
+
+
+    document.getElementById("erreur")
+        .textContent =
+        message;
+
+}
+
+
+/* =========================================================
+   LANCEMENT
+   ========================================================= */
+
+chargerRandonnee();
+
+
+</script>
+
+
+</body>
+
+</html>

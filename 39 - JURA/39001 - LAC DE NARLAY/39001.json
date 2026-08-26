@@ -1,0 +1,14 @@
+{
+  "nom": "BOUCLE DU LAC DE NARLAY",
+  "code": "39001",
+  "distance_km": 3.9,
+  "duree_minutes": 75,
+  "denivele_positif_m": 50,
+
+  "depart": {
+    "lieu_dit": "Parking du Mont des Ifs",
+    "adresse": "D75 - 39130 Frasnois",
+    "latitude": 46.6364,
+    "longitude": 5.9145
+  }
+}

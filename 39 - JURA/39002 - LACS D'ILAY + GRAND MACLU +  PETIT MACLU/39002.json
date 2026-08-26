@@ -1,0 +1,14 @@
+{
+  "nom": "BOUCLE DES 3 LACS (ILAY, GRAND MACLU, PETIT MACLU)",
+  "code": "39002",
+  "distance_km": 7.5,
+  "duree_minutes": 150,
+  "denivele_positif_m": 96,
+
+  "depart": {
+    "lieu_dit": "Parking du Mont des Ifs",
+    "adresse": "D75 - 39130 Frasnois",
+    "latitude": 46.6335, 
+    "longitude": 5.9194
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "nom": "BOUCLE DES BELVEDERES ET DU PIC DE L'AIGLE (ILAY, GRAND MACLU, PETIT MACLU, NARLAY)",
+  "code": "39004",
+  "distance_km": 4.7,
+  "duree_minutes": 95,
+  "denivele_positif_m": 171,
+
+  "depart": {
+    "lieu_dit": "Parking Pic de l'Aigle P2",
+    "adresse": "39150 La Chaux-du-Dombief",
+    "latitude": 46.6097, 
+    "longitude": 5.9045
+  }
+}

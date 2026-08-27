@@ -506,16 +506,15 @@
 			}
 		}
 
-
         /* =====================================================
            PLEIN ÉCRAN DE LA CARTE
            ===================================================== */
-        elements.boutonPleinEcran.onclick = function () {
+		elements.boutonPleinEcran.onclick = function () {
 
-            carteConteneur.classList.toggle("plein-ecran");
-			
-			boutonPleinEcran.textContent = carteConteneur.classList.contains("plein-ecran")?"✕":"⛶"; 
-        };
+			const pleinEcran = elements.carteConteneur.classList.toggle("plein-ecran");
+
+			elements.boutonPleinEcran.textContent = pleinEcran ? "✕" : "⛶";
+		};
 
 
         /* =====================================================

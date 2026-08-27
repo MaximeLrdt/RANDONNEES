@@ -10,13 +10,9 @@
         /* =====================================================
            BASE
            ===================================================== */
-        html,
         body {
-            margin: 0;
+			margin: 0;
             padding: 0;
-        }
-
-        body {
             font-family: Arial, sans-serif;
             background: #f5f5f5;
             color: #222;
@@ -38,7 +34,6 @@
         h1 {
             text-align: center;
             font-size: 21px;
-            font-weight: bold;
         }
 
         /* =====================================================
@@ -52,7 +47,6 @@
         }
 
         .caracteristique {
-            min-width: 0;
             padding: 12px 1px;
             text-align: center;
             background: #f0f0f0;
@@ -94,7 +88,6 @@
         .depart h2 {
             margin: 0 0 10px;
             font-size: 15px;
-            font-weight: bold;
             white-space: nowrap;
         }
 
@@ -239,11 +232,9 @@
     <div class="conteneur">
 
         <!-- TITRE -->
-
         <h1 id="nom">Chargement...</h1>
 
         <!-- CARACTÉRISTIQUES -->
-
         <div class="caracteristiques">
 
             <div class="caracteristique">
@@ -288,35 +279,18 @@
         </div>
 
         <!-- CARTE -->
+        <div id="carteConteneur" class="carte-conteneur">
 
-        <div
-            id="carteConteneur"
-            class="carte-conteneur"
-        >
+            <img id="carte" class="carte" alt="Carte de la randonnée">
 
-            <img
-                id="carte"
-                class="carte"
-                alt="Carte de la randonnée"
-            >
-
-            <button
-                id="boutonPleinEcran"
-                class="bouton plein-ecran"
-                type="button"
-                aria-label="Afficher la carte en plein écran"
-            >
+            <button id="boutonPleinEcran" class="bouton plein-ecran">
                 ⛶
             </button>
 
         </div>
 
         <!-- TÉLÉCHARGEMENT GPX -->
-
-        <a
-            id="telecharger"
-            class="bouton telecharger-gpx"
-        >
+        <a id="telecharger" class="bouton telecharger-gpx">
 
             <span class="icone-telechargement">
 
@@ -342,7 +316,6 @@
         </a>
 
         <!-- ERREUR -->
-
         <p id="erreur" class="erreur"></p>
 
     </div>

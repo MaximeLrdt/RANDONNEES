@@ -78,10 +78,7 @@
            POINT DE DÉPART
            ===================================================== */
         .depart {
-            margin-bottom: 20px;
-        }
-
-        .depart-infos {
+		    margin-bottom: 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -285,32 +282,22 @@
         <!-- POINT DE DÉPART -->
         <div class="depart">
 
-            <div class="depart-infos">
+            <div class="depart-texte">
+                <h2>POINT DE DEPART</h2>
+                <p id="lieu">-</p>
+                <p id="adresse">-</p>
+            </div>
 
-                <div class="depart-texte">
+            <!-- NAVIGATION -->
+            <div class="depart-navigation">
 
-                    <h2>POINT DE DEPART</h2>
+                <button id="boutonMaps" class="bouton maps">
+                    <img class="logo-navigation" src="logos/maps-icon.png" alt="Maps">
+                </button>
 
-                    <p>
-                        <strong id="lieu">-</strong>
-                    </p>
-
-                    <p id="adresse">-</p>
-
-                </div>
-
-                <!-- NAVIGATION -->
-                <div class="depart-navigation">
-
-                    <button id="boutonMaps" class="bouton maps">
-                        <img class="logo-navigation" src="logos/maps-icon.png" alt="Maps">
-                    </button>
-
-                    <button id="boutonWaze" class="bouton waze">
-                        <img class="logo-navigation" src="logos/waze-icon.png" alt="Waze">
-                    </button>
-
-                </div>
+                <button id="boutonWaze" class="bouton waze">
+                    <img class="logo-navigation" src="logos/waze-icon.png" alt="Waze">
+                </button>
 
             </div>
 

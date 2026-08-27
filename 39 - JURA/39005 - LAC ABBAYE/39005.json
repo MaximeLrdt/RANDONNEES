@@ -1,0 +1,14 @@
+{
+  "nom": "39005 - LAC ABBAYE",
+  "code": "39005",
+  "distance_km": 8.2,
+  "duree_minutes": 160,
+  "denivele_positif_m": 215,
+
+  "depart": {
+    "lieu_dit": "Parking de l'Abbaye",
+    "adresse": "14 Ham. de l'Abbaye – 39150 Grande-Rivière Château",
+    "latitude": 46.5353, 
+    "longitude": 5.9222
+  }
+}

@@ -2,25 +2,7 @@
 <gpx xmlns="http://www.topografix.com/GPX/1/1" version="1.1">
  
   <trk>
-    <name>Boucle du lac de Narlay</name>
-    <desc>&lt;p&gt;&lt;strong&gt;BOUCLE DU LAC DE NARLAY&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CARACTÉRISTIQUES :&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;  - Distance : 3,9 km&lt;/p&gt;
-
-&lt;p&gt;  - Durée : 1 h 15 min&lt;/p&gt;
-
-&lt;p&gt;  - Dénivelé positif : 50 m&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;POINT DE DÉPART :&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;  - Parking du Mont des Ifs&lt;/p&gt;
-
-&lt;p&gt;  - 39130 Le Frasnois&lt;/p&gt;
-
-&lt;p&gt;  - GPS : 46.6364, 5.9145&lt;/p&gt;</desc>
-
+    <name>39001 - LAC NARLAY</name>
     <trkseg>
       <trkpt lat="46.63651" lon="5.91449">
         <ele>793</ele>

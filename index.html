@@ -1049,9 +1049,26 @@ async function chargerRandonnee() {
             rando.depart.lieu_dit;
 
 
-        document.getElementById("adresse")
-            .textContent =
-            rando.depart.adresse;
+		const adresse =
+			rando.depart.adresse;
+
+		const partiesAdresse =
+			adresse.split(" - ");
+
+		const elementAdresse =
+			document.getElementById("adresse");
+
+		if (partiesAdresse.length > 1) {
+
+			elementAdresse.innerHTML =
+				partiesAdresse.join("<br>");
+
+		} else {
+
+			elementAdresse.textContent =
+				adresse;
+
+		}
 
 
         /* =================================================

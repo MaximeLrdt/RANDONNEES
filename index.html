@@ -487,16 +487,6 @@
 
         }
 
-
-        /* =====================================================
-           AFFICHER L'ADRESSE
-           ===================================================== */
-
-        function afficherAdresse(adresse) {
-            elements.adresse.textContent = adresse;
-        }
-
-
         /* =====================================================
            CONFIGURER LA NAVIGATION
            ===================================================== */
@@ -571,8 +561,7 @@
 
                 /* POINT DE DÉPART */
                 elements.lieu.textContent = rando.depart.lieu_dit;
-
-                afficherAdresse(rando.depart.adresse);
+                elements.adresse.textContent = rando.depart.adresse;
 
                 /* CARTE */
                 elements.carte.src = dossier + code + "1 - carte.png";

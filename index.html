@@ -44,18 +44,8 @@
             text-align: center;
             margin: 0 0 20px;
             line-height: 1.2;
-        }
-
-        .titre-principal {
             font-size: 21px;
             font-weight: bold;
-        }
-
-        .titre-parentheses {
-            display: block;
-            font-size: 11px;
-            font-style: italic;
-            font-weight: normal;
         }
 
         /* =====================================================
@@ -483,31 +473,9 @@
            AFFICHER LE TITRE
            ===================================================== */
 
-        function afficherTitre(nom) {
-
-            const titre = elements.nom;
-            const positionParenthese = nom.indexOf("(");
-
-            if (positionParenthese === -1) {
-
-                titre.innerHTML =
-                    `<span class="titre-principal">${nom}</span>`;
-
-                return;
-            }
-
-            const partiePrincipale =
-                nom.substring(0, positionParenthese).trim();
-
-            const partieParentheses =
-                nom.substring(positionParenthese).trim();
-
-            titre.innerHTML =
-                `<span class="titre-principal">${partiePrincipale}</span>` +
-                `<span class="titre-parentheses">${partieParentheses}</span>`;
-
-        }
-
+		function afficherTitre(nom) {
+			elements.nom.textContent = nom;
+		}
 
         /* =====================================================
            AFFICHER LA DURÉE
@@ -581,50 +549,31 @@
             const code = new URLSearchParams(window.location.search).get("rando");
 
             if (!code) {
-
-                afficherErreur(
-                    "Aucune randonnée n'a été indiquée."
-                );
-
+                afficherErreur("Aucune randonnée n'a été indiquée.");
                 return;
             }
 
-
-            const dossier =
-                chemins[code];
-
+            const dossier = chemins[code];
 
             if (!dossier) {
-
-                afficherErreur(
-                    "Randonnée introuvable."
-                );
-
+                afficherErreur("Randonnée introuvable.");
                 return;
             }
-
 
             try {
 
                 /* JSON */
-
-                const reponse =
-                    await fetch(dossier + code + ".json");
-
+                const reponse = await fetch(dossier + code + ".json");
 
                 if (!reponse.ok) {
                     throw new Error("JSON introuvable");
                 }
 
-
                 const rando = await reponse.json();
-
 
                 /* TITRE */
                 document.title = rando.nom;
-
                 afficherTitre(rando.nom);
-
 
                 /* CARACTÉRISTIQUES */
                 elements.distance.textContent = rando.distance_km + " km";
@@ -633,14 +582,10 @@
 
                 elements.denivele.textContent = rando.denivele_positif_m + " m";
 
-
                 /* POINT DE DÉPART */
                 elements.lieu.textContent = rando.depart.lieu_dit;
 
-                afficherAdresse(
-                    rando.depart.adresse
-                );
-
+                afficherAdresse(rando.depart.adresse);
 
                 /* CARTE */
                 elements.carte.src = dossier + code + "1 - carte.png";
@@ -650,23 +595,13 @@
 				elements.telecharger.href = lienGPX;
 				elements.telecharger.download = code + "2 - trace.gpx";
 				
-
                 /* NAVIGATION */
-                configurerNavigation(
-                    rando.depart.latitude,
-                    rando.depart.longitude
-                );
-
+                configurerNavigation(rando.depart.latitude,rando.depart.longitude);
             }
 
             catch (erreur) {
-
-                afficherErreur(
-                    "Impossible de charger les informations de la randonnée."
-                );
-
+                afficherErreur("Impossible de charger les informations de la randonnée.");
                 console.error(erreur);
-
             }
 
         }

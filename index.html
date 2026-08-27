@@ -492,7 +492,6 @@
         /* =====================================================
            CONFIGURER LA NAVIGATION
            ===================================================== */
-
 		function configurerNavigation(latitude, longitude) {
 			elements.boutonMaps.onclick = function () {
 				window.location.href = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
@@ -543,22 +542,27 @@
                     throw new Error("JSON introuvable");
                 }
 
-                const rando = await reponse.json();
+				const rando = await reponse.json();
 
-                /* TITRE */
-                document.title = rando.nom;
-                elements.nom.textContent = rando.nom;
+				const {
+					nom,
+					distance_km,
+					duree_minutes,
+					denivele_positif_m,
+					depart
+				} = rando;
 
-                /* CARACTÉRISTIQUES */
-                elements.distance.textContent = rando.distance_km + " km";
+				document.title = nom;
+				elements.nom.textContent = nom;
 
-                afficherDuree(rando.duree_minutes);
+				elements.distance.textContent = distance_km + " km";
 
-                elements.denivele.textContent = rando.denivele_positif_m + " m";
+				afficherDuree(duree_minutes);
 
-                /* POINT DE DÉPART */
-                elements.lieu.textContent = rando.depart.lieu_dit;
-                elements.adresse.textContent = rando.depart.adresse;
+				elements.denivele.textContent = denivele_positif_m + " m";
+
+				elements.lieu.textContent = depart.lieu_dit;
+				elements.adresse.textContent = depart.adresse;
 
                 /* CARTE */
                 elements.carte.src = dossier + code + "1 - carte.png";

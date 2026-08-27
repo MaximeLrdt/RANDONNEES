@@ -457,7 +457,9 @@
 			telecharger: document.getElementById("telecharger"),
 			erreur: document.getElementById("erreur"),
 			boutonMaps: document.getElementById("boutonMaps"),
-			boutonWaze: document.getElementById("boutonWaze")
+			boutonWaze: document.getElementById("boutonWaze"),
+			carteConteneur: document.getElementById("carteConteneur"),
+			boutonPleinEcran: document.getElementById("boutonPleinEcran")
 		};
 
         /* =====================================================
@@ -504,12 +506,7 @@
         /* =====================================================
            PLEIN ÉCRAN DE LA CARTE
            ===================================================== */
-
-        const carteConteneur = document.getElementById("carteConteneur");
-        const boutonPleinEcran = document.getElementById("boutonPleinEcran");
-
-
-        boutonPleinEcran.onclick = function () {
+        elements.boutonPleinEcran.onclick = function () {
 
             carteConteneur.classList.toggle("plein-ecran");
 			

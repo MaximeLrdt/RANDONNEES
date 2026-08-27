@@ -569,11 +569,11 @@
 				elements.adresse.textContent = depart.adresse;
 
                 /* CARTE */
-                elements.carte.src = dossier + code + "1 - carte.png";
+				const base = dossier + code;
 
-				const lienGPX = dossier + code + "2 - trace.gpx";
+				elements.carte.src = base + "1 - carte.png";
 
-				elements.telecharger.href = lienGPX;
+				elements.telecharger.href = base + "2 - trace.gpx";
 				elements.telecharger.download = code + "2 - trace.gpx";
 				
                 /* NAVIGATION */

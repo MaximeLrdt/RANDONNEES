@@ -542,37 +542,18 @@
 
         function configurerNavigation(latitude, longitude) {
 
-            const boutonMaps =
-                document.getElementById("boutonMaps");
-
-            const boutonWaze =
-                document.getElementById("boutonWaze");
-
+            const boutonMaps = document.getElementById("boutonMaps");
+            const boutonWaze = document.getElementById("boutonWaze");
 
             boutonMaps.onclick = function () {
-
-                const url =
-                    "https://www.google.com/maps/dir/?api=1&destination=" +
-                    latitude +
-                    "," +
-                    longitude;
-
-                window.location.href = url;
+                window.location.href = 'https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}';
 
             };
 
 
             boutonWaze.onclick = function () {
 
-                const url =
-                    "https://www.waze.com/ul?ll=" +
-                    latitude +
-                    "," +
-                    longitude +
-                    "&navigate=yes";
-
-                window.location.href = url;
-
+                window.location.href = 'https://www.waze.com/ul?ll=${latitude},${longitude}&navigate=yes';
             };
 
         }

@@ -538,9 +538,9 @@
             }
 
             try {
-
                 /* JSON */
-                const reponse = await fetch(dossier + code + ".json");
+				const base = dossier + code;
+                const reponse = await fetch(base + ".json");
 
                 if (!reponse.ok) {
                     throw new Error("JSON introuvable");
@@ -569,15 +569,13 @@
 				elements.adresse.textContent = depart.adresse;
 
                 /* CARTE */
-				const base = dossier + code;
-
 				elements.carte.src = base + "1 - carte.png";
 
 				elements.telecharger.href = base + "2 - trace.gpx";
 				elements.telecharger.download = code + "2 - trace.gpx";
 				
                 /* NAVIGATION */
-                configurerNavigation(rando.depart.latitude,rando.depart.longitude);
+                configurerNavigation(depart.latitude,depart.longitude);
             }
 
             catch (erreur) {

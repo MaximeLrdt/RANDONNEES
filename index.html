@@ -650,15 +650,11 @@
                 /* CARTE */
                 elements.carte.src = dossier + code + "1 - carte.png";
 
+				const lienGPX = dossier + code + "2 - trace.gpx";
 
-                /* GPX */
-                const lienGPX = dossier + code + "2 - trace.gpx";
-
-                const telecharger = elements.telecharger;
-
-                telecharger.href = lienGPX;
-
-                telecharger.download = code + "2 - trace.gpx";
+				elements.telecharger.href = lienGPX;
+				elements.telecharger.download = code + "2 - trace.gpx";
+				
 
                 /* NAVIGATION */
                 configurerNavigation(

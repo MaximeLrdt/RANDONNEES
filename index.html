@@ -582,29 +582,15 @@
            PLEIN ÉCRAN DE LA CARTE
            ===================================================== */
 
-        const carteConteneur =
-            document.getElementById("carteConteneur");
-
-        const boutonPleinEcran =
-            document.getElementById("boutonPleinEcran");
+        const carteConteneur = document.getElementById("carteConteneur");
+        const boutonPleinEcran = document.getElementById("boutonPleinEcran");
 
 
         boutonPleinEcran.onclick = function () {
 
             carteConteneur.classList.toggle("plein-ecran");
-
-            if (
-                carteConteneur.classList.contains("plein-ecran")
-            ) {
-
-                boutonPleinEcran.textContent = "✕";
-
-            } else {
-
-                boutonPleinEcran.textContent = "⛶";
-
-            }
-
+			
+			boutonPleinEcran.textContent = carteConteneur.classList.contains("plein-ecran")?"✕":"⛶"; 
         };
 
 

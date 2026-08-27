@@ -517,19 +517,12 @@
 
             const heures = Math.floor(minutesTotal / 60);
             const minutes = minutesTotal % 60;
-
             const morceaux = [];
 
-            if (heures > 0) {
-                morceaux.push(`${heures} h`);
-            }
+            if (heures) morceaux.push(`${heures} h`);
+            if (minutes) morceaux.push(`${minutes} min`);
 
-            if (minutes > 0) {
-                morceaux.push(`${minutes} min`);
-            }
-
-            document.getElementById("duree").textContent =
-                morceaux.join(" ");
+            elements.duree.textContent = morceaux.join(" ");
 
         }
 

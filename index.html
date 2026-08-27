@@ -622,32 +622,25 @@
                 }
 
 
-                const rando =
-                    await reponse.json();
+                const rando = await reponse.json();
 
 
                 /* TITRE */
-
                 document.title = rando.nom;
 
                 afficherTitre(rando.nom);
 
 
                 /* CARACTÉRISTIQUES */
-
-                document.getElementById("distance").textContent =
-                    rando.distance_km + " km";
+                elements.distance.textContent = rando.distance_km + " km";
 
                 afficherDuree(rando.duree_minutes);
 
-                document.getElementById("denivele").textContent =
-                    rando.denivele_positif_m + " m";
+                elements.denivele.textContent = rando.denivele_positif_m + " m";
 
 
                 /* POINT DE DÉPART */
-
-                document.getElementById("lieu").textContent =
-                    rando.depart.lieu_dit;
+                elements.lieu.textContent = rando.depart.lieu_dit;
 
                 afficherAdresse(
                     rando.depart.adresse
@@ -655,32 +648,19 @@
 
 
                 /* CARTE */
-
-                document.getElementById("carte").src =
-                    dossier +
-                    code +
-                    "1 - carte.png";
+                elements.carte.src = dossier + code + "1 - carte.png";
 
 
                 /* GPX */
+                const lienGPX = dossier + code + "2 - trace.gpx";
 
-                const lienGPX =
-                    dossier +
-                    code +
-                    "2 - trace.gpx";
-
-                const telecharger =
-                    document.getElementById("telecharger");
+                const telecharger = elements.telecharger;
 
                 telecharger.href = lienGPX;
 
-                telecharger.download =
-                    code +
-                    "2 - trace.gpx";
-
+                telecharger.download = code + "2 - trace.gpx";
 
                 /* NAVIGATION */
-
                 configurerNavigation(
                     rando.depart.latitude,
                     rando.depart.longitude

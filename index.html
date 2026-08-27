@@ -137,39 +137,60 @@
             flex-shrink: 0;
         }
 
-        .bouton-navigation {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 60px;
-            height: 60px;
-            padding: 0;
-            border: none;
-            border-radius: 12px;
-            box-sizing: border-box;
-            transition: transform 0.15s ease;
-        }
+		.bouton {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: none;
+			box-sizing: border-box;
+			cursor: pointer;
+		}
 
-        #boutonMaps {
-            padding: 6px;
-            background: white;
-        }
+		.bouton:active {
+			transform: scale(0.95);
+		}
 
-        #boutonWaze {
-            background: transparent;
-        }
+		.bouton.maps,
+		.bouton.waze {
+			width: 60px;
+			height: 60px;
+			padding: 0;
+			border-radius: 12px;
+		}
 
-        .bouton-navigation:active {
-            transform: scale(0.95);
-        }
+		.bouton.maps {
+			padding: 6px;
+			background: white;
+		}
 
-        .logo-navigation {
-            width: 100%;
-            height: 100%;
-            display: block;
-            object-fit: contain;
-        }
+		.bouton.waze {
+			background: transparent;
+		}
 
+		.logo-navigation {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: contain;
+		}
+		
+        /* =====================================================
+           BOUTON PLEIN ÉCRAN
+           ===================================================== */
+
+		.bouton.plein-ecran {
+			position: absolute;
+			top: 8px;
+			right: 8px;
+			padding: 8px 10px;
+			background: rgba(0, 0, 0, 0.75);
+			color: white;
+			border-radius: 6px;
+			font-size: 20px;
+		}
+				
+		
+		
         /* =====================================================
            CARTE
            ===================================================== */
@@ -187,21 +208,7 @@
             border-radius: 8px;
         }
 
-        /* =====================================================
-           BOUTON PLEIN ÉCRAN
-           ===================================================== */
 
-        .bouton-plein-ecran {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            padding: 8px 10px;
-            background: rgba(0, 0, 0, 0.75);
-            color: white;
-            border: none;
-            border-radius: 6px;
-            font-size: 20px;
-        }
 
         /* =====================================================
            CARTE EN PLEIN ÉCRAN
@@ -234,24 +241,19 @@
         /* =====================================================
            BOUTON GPX
            ===================================================== */
-
-        .bouton {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            width: 100%;
-            box-sizing: border-box;
-            margin: 10px 0;
-            padding: 14px;
-            background: #222;
-            color: white;
-            text-align: center;
-            text-decoration: none;
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-        }
+		   
+		   .bouton.telecharger-gpx {
+				width: 100%;
+				gap: 10px;
+				margin: 10px 0;
+				padding: 14px;
+				background: #222;
+				color: white;
+				text-align: center;
+				text-decoration: none;
+				border-radius: 8px;
+				font-size: 16px;
+			}
 
         .icone-telechargement {
             width: 22px;
@@ -325,7 +327,7 @@
 
                     <button
                         id="boutonMaps"
-                        class="bouton-navigation"
+                        class="bouton maps"
                         type="button"
                         aria-label="Ouvrir Google Maps"
                     >
@@ -338,7 +340,7 @@
 
                     <button
                         id="boutonWaze"
-                        class="bouton-navigation"
+                        class="bouton waze"
                         type="button"
                         aria-label="Ouvrir Waze"
                     >
@@ -370,7 +372,7 @@
 
             <button
                 id="boutonPleinEcran"
-                class="bouton-plein-ecran"
+                class="bouton plein-ecran"
                 type="button"
                 aria-label="Afficher la carte en plein écran"
             >
@@ -383,7 +385,7 @@
 
         <a
             id="telecharger"
-            class="bouton"
+            class="bouton telecharger-gpx"
         >
 
             <span class="icone-telechargement">

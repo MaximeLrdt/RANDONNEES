@@ -474,9 +474,8 @@
 
         function afficherErreur(message) {
 
-            document.getElementById("nom").textContent = "Erreur";
-            document.getElementById("erreur").textContent = message;
-
+            elements.nom.textContent = "Erreur";
+            elements.erreur.textContent = message;
         }
 
 
@@ -486,7 +485,7 @@
 
         function afficherTitre(nom) {
 
-            const titre = document.getElementById("nom");
+            const titre = elements.nom;
             const positionParenthese = nom.indexOf("(");
 
             if (positionParenthese === -1) {

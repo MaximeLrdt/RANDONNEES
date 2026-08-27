@@ -578,12 +578,7 @@
 
         async function chargerRandonnee() {
 
-            const parametres =
-                new URLSearchParams(window.location.search);
-
-            const code =
-                parametres.get("rando");
-
+            const code = new URLSearchParams(window.location.search).get("rando");
 
             if (!code) {
 

@@ -455,7 +455,9 @@
 			adresse: document.getElementById("adresse"),
 			carte: document.getElementById("carte"),
 			telecharger: document.getElementById("telecharger"),
-			erreur: document.getElementById("erreur")
+			erreur: document.getElementById("erreur"),
+			boutonMaps: document.getElementById("boutonMaps"),
+			boutonWaze: document.getElementById("boutonWaze")
 		};
 
         /* =====================================================
@@ -467,15 +469,6 @@
             elements.nom.textContent = "Erreur";
             elements.erreur.textContent = message;
         }
-
-
-        /* =====================================================
-           AFFICHER LE TITRE
-           ===================================================== */
-
-		function afficherTitre(nom) {
-			elements.nom.textContent = nom;
-		}
 
         /* =====================================================
            AFFICHER LA DURÉE
@@ -509,18 +502,12 @@
            ===================================================== */
 
 		function configurerNavigation(latitude, longitude) {
-
-			const boutonMaps = document.getElementById("boutonMaps");
-			const boutonWaze = document.getElementById("boutonWaze");
-
-			boutonMaps.onclick = function () {
+			elements.boutonMaps.onclick = function () {
 				window.location.href = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
 			};
-
-			boutonWaze.onclick = function () {
+			elements.boutonWaze.onclick = function () {
 				window.location.href = `https://www.waze.com/ul?ll=${latitude},${longitude}&navigate=yes`;
 			};
-
 		}
 
 
@@ -573,7 +560,7 @@
 
                 /* TITRE */
                 document.title = rando.nom;
-                afficherTitre(rando.nom);
+                elements.nom.textContent = rando.nom;
 
                 /* CARACTÉRISTIQUES */
                 elements.distance.textContent = rando.distance_km + " km";

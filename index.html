@@ -532,24 +532,7 @@
            ===================================================== */
 
         function afficherAdresse(adresse) {
-
-            const elementAdresse =
-                document.getElementById("adresse");
-
-            const partiesAdresse =
-                adresse.split(" - ");
-
-            if (partiesAdresse.length > 1) {
-
-                elementAdresse.innerHTML =
-                    partiesAdresse.join("<br>");
-
-            } else {
-
-                elementAdresse.textContent = adresse;
-
-            }
-
+            elements.adresse.textContent = adresse;
         }
 
 

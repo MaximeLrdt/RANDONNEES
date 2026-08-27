@@ -540,23 +540,20 @@
            CONFIGURER LA NAVIGATION
            ===================================================== */
 
-        function configurerNavigation(latitude, longitude) {
+		function configurerNavigation(latitude, longitude) {
 
-            const boutonMaps = document.getElementById("boutonMaps");
-            const boutonWaze = document.getElementById("boutonWaze");
+			const boutonMaps = document.getElementById("boutonMaps");
+			const boutonWaze = document.getElementById("boutonWaze");
 
-            boutonMaps.onclick = function () {
-                window.location.href = 'https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}';
+			boutonMaps.onclick = function () {
+				window.location.href = `https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`;
+			};
 
-            };
+			boutonWaze.onclick = function () {
+				window.location.href = `https://www.waze.com/ul?ll=${latitude},${longitude}&navigate=yes`;
+			};
 
-
-            boutonWaze.onclick = function () {
-
-                window.location.href = 'https://www.waze.com/ul?ll=${latitude},${longitude}&navigate=yes';
-            };
-
-        }
+		}
 
 
         /* =====================================================

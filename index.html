@@ -10,7 +10,6 @@
         /* =====================================================
            BASE
            ===================================================== */
-
         html,
         body {
             margin: 0;
@@ -26,7 +25,6 @@
         /* =====================================================
            CONTENEUR PRINCIPAL
            ===================================================== */
-
         .conteneur {
             min-height: 100dvh;
             box-sizing: border-box;
@@ -37,7 +35,6 @@
         /* =====================================================
            TITRE
            ===================================================== */
-
         h1 {
             text-align: center;
             margin: 0 0 20px;
@@ -49,7 +46,6 @@
         /* =====================================================
            CARACTÉRISTIQUES
            ===================================================== */
-
         .caracteristiques {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -81,7 +77,6 @@
         /* =====================================================
            POINT DE DÉPART
            ===================================================== */
-
         .depart {
             margin-bottom: 20px;
         }
@@ -130,7 +125,6 @@
         /* =====================================================
            BOUTONS GOOGLE MAPS / WAZE
            ===================================================== */
-
         .depart-navigation {
             display: flex;
             gap: 10px;
@@ -167,16 +161,18 @@
 			background: transparent;
 		}
 
-		.logo-navigation {
+		.bouton.telecharger-gpx {
 			width: 100%;
-			height: 100%;
-			display: block;
-			object-fit: contain;
+			gap: 10px;
+			margin: 10px 0;
+			padding: 14px;
+			background: #222;
+			color: white;
+			text-align: center;
+			text-decoration: none;
+			border-radius: 8px;
+			font-size: 16px;
 		}
-		
-        /* =====================================================
-           BOUTON PLEIN ÉCRAN
-           ===================================================== */
 
 		.bouton.plein-ecran {
 			position: absolute;
@@ -188,13 +184,17 @@
 			border-radius: 6px;
 			font-size: 20px;
 		}
-				
-		
-		
+
+		.logo-navigation {
+			width: 100%;
+			height: 100%;
+			display: block;
+			object-fit: contain;
+		}
+
         /* =====================================================
            CARTE
            ===================================================== */
-
         .carte-conteneur {
             position: relative;
             width: 100%;
@@ -208,12 +208,9 @@
             border-radius: 8px;
         }
 
-
-
         /* =====================================================
            CARTE EN PLEIN ÉCRAN
            ===================================================== */
-
         .carte-conteneur.plein-ecran {
             position: fixed;
             top: 0;
@@ -238,23 +235,6 @@
             border-radius: 0;
         }
 
-        /* =====================================================
-           BOUTON GPX
-           ===================================================== */
-		   
-		   .bouton.telecharger-gpx {
-				width: 100%;
-				gap: 10px;
-				margin: 10px 0;
-				padding: 14px;
-				background: #222;
-				color: white;
-				text-align: center;
-				text-decoration: none;
-				border-radius: 8px;
-				font-size: 16px;
-			}
-
         .icone-telechargement {
             width: 22px;
             height: 22px;
@@ -266,7 +246,6 @@
         /* =====================================================
            ERREUR
            ===================================================== */
-
         .erreur {
             text-align: center;
             color: #b00000;

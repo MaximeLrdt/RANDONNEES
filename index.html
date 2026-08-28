@@ -35,6 +35,7 @@
         }
 		
 		.titre {
+		    text-align: center;
 			margin-top: 12px;
 			margin-bottom: 20px;
 		}
@@ -215,28 +216,26 @@
 
     <div class="conteneur">
 
-        <!-- TITRE -->
-        <div class="titre texte-centre">
+        <div class="titre">
 			<div class="texte-niveau1 texte-gras" id="nom">Chargement...</div>
 			<div class="texte-niveau2 texte-italique" id="code"></div>
 		</div>
 		
-        <!-- CARACTÉRISTIQUES -->
         <div class="caracteristiques">
 
             <div class="caracteristique">
-                <div class="texte-niveau2 texte-centre texte-gras" id="distance">-</div>
-                <div class="texte-niveau3 texte-centre libelle">Distance</div>
+                <div class="texte-niveau2 texte-gras" id="distance">-</div>
+                <div class="texte-niveau3 libelle">Distance</div>
             </div>
 
             <div class="caracteristique">
-                <div class="texte-niveau2 texte-centre texte-gras" id="duree">-</div>
-                <div class="texte-niveau3 texte-centre libelle">Durée</div>
+                <div class="texte-niveau2 texte-gras" id="duree">-</div>
+                <div class="texte-niveau3 libelle">Durée</div>
             </div>
 
             <div class="caracteristique">
-                <div class="texte-niveau2 texte-centre texte-gras" id="denivele">-</div>
-                <div class="texte-niveau3 texte-centre libelle">Dénivelé positif</div>
+                <div class="texte-niveau2 texte-gras" id="denivele">-</div>
+                <div class="texte-niveau3 libelle">Dénivelé positif</div>
             </div>
 
         </div>
@@ -263,7 +262,6 @@
 
         </div>
 
-        <!-- CARTE -->
         <div id="carteConteneur" class="carte-conteneur">
 
             <img id="carte" class="carte" alt="Carte de la randonnée">
@@ -274,13 +272,11 @@
 
         </div>
 
-        <!-- TÉLÉCHARGEMENT GPX -->
         <a id="telecharger" class="bouton telecharger-gpx texte-niveau2">
 
             <span class="icone-telechargement">
 
-                <svg
-                    viewBox="0 0 24 24"
+                <svg viewBox="0 0 24 24"
                     width="22"
                     height="22"
                     fill="none"
@@ -300,7 +296,6 @@
 
         </a>
 
-        <!-- ERREUR -->
         <p id="erreur" class="erreur"></p>
 
     </div>

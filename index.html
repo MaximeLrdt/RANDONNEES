@@ -7,9 +7,6 @@
     <title>Randonnée</title>
 
     <style>
-        /* =====================================================
-           BASE
-           ===================================================== */
         body {
 			margin: 0;
             padding: 0;
@@ -18,9 +15,6 @@
             color: #222;
         }
 
-        /* =====================================================
-           CONTENEUR PRINCIPAL
-           ===================================================== */
         .conteneur {
             min-height: 100dvh;
             box-sizing: border-box;
@@ -28,17 +22,11 @@
             background: white;
         }
 
-        /* =====================================================
-           TITRE
-           ===================================================== */
         h1 {
             text-align: center;
             font-size: 21px;
         }
 
-        /* =====================================================
-           CARACTÉRISTIQUES
-           ===================================================== */
         .caracteristiques {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -65,9 +53,6 @@
             color: #666;
         }
 
-        /* =====================================================
-           POINT DE DÉPART
-           ===================================================== */
         .depart {
 		    margin-bottom: 20px;
             display: flex;
@@ -82,19 +67,8 @@
         .depart-texte {
             flex: 1;
             min-width: 0;
-            overflow: hidden;
         }
 
-        .depart h2 {
-            margin: 0 0 10px;
-            font-size: 15px;
-            white-space: nowrap;
-        }
-
-        .depart p {
-            margin: 6px 0;
-            font-size: 13px;
-        }
 
         /* =====================================================
            BOUTONS GOOGLE MAPS / WAZE
@@ -252,16 +226,14 @@
 
         </div>
 
-        <!-- POINT DE DÉPART -->
         <div class="depart">
 
             <div class="depart-texte">
-                <h2>POINT DE DEPART</h2>
-                <p id="lieu">-</p>
-                <p id="adresse">-</p>
+				<strong>POINT DE DEPART</strong><br>
+				<span id="lieu">-</span><br>
+				<span id="adresse">-</span>
             </div>
 
-            <!-- NAVIGATION -->
             <div class="depart-navigation">
 
                 <button id="boutonMaps" class="bouton maps">

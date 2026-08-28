@@ -129,7 +129,9 @@ body {
 		.bouton.plein-ecran {
 			position: absolute;
 			top: 8px;
-			right: 8px;
+			right: 8px;			
+			width: 45px;
+			height: 45px;
 			padding: 8px 10px;
 			background: rgba(0, 0, 0, 0.75);
 			color: white;

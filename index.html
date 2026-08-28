@@ -35,7 +35,7 @@
         }
 		
 		.titre {
-			margin-top: 10px;
+			margin-top: 12px;
 			margin-bottom: 20px;
 		}
 				
@@ -45,6 +45,10 @@
 
 		.texte-gras {
 			font-weight: bold;
+		}	
+		
+		.texte-italique {
+			font-style: italic;
 		}
 		
         .caracteristiques {
@@ -212,8 +216,11 @@
     <div class="conteneur">
 
         <!-- TITRE -->
-        <div class="texte-niveau1 texte-centre texte-gras titre" id="nom">Chargement...</div>
-
+        <div class="titre texte-centre">
+			<div class="texte-niveau1 texte-gras" id="nom">Chargement...</div>
+			<div class="texte-niveau2 texte-italique" id="code"></div>
+		</div>
+		
         <!-- CARACTÉRISTIQUES -->
         <div class="caracteristiques">
 
@@ -314,6 +321,7 @@
 		
 		const elements = {
 			nom: document.getElementById("nom"),
+			code: document.getElementById("code"),
 			distance: document.getElementById("distance"),
 			duree: document.getElementById("duree"),
 			denivele: document.getElementById("denivele"),
@@ -422,8 +430,11 @@
 					depart
 				} = rando;
 
+				const [codeRandonnee, ...nomRandonnee] = nom.split(" - ");
+
 				document.title = nom;
-				elements.nom.textContent = nom;
+				elements.nom.textContent = nomRandonnee.join(" - ");
+				elements.code.textContent = "Référence : " + codeRandonnee;
 
 				elements.distance.textContent = distance_km + " km";
 

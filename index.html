@@ -22,9 +22,18 @@
             background: white;
         }
 
-        h1 {
+        .texte-niveau1 {
             text-align: center;
             font-size: 21px;
+        }
+		
+		.texte-niveau2 {            
+			font-size: 17px;
+            font-weight: bold;
+        }
+		
+		.texte-niveau3 {
+			font-size: 13px;
         }
 
         .caracteristiques {
@@ -42,13 +51,7 @@
             white-space: nowrap;
         }
 
-        .valeur {
-            font-size: 17px;
-            font-weight: bold;
-        }
-
-        .libelle {
-            font-size: 13px;
+        .texte-niveau3.libelle {
             margin-top: 5px;
             color: #666;
         }
@@ -69,10 +72,6 @@
             min-width: 0;
         }
 
-
-        /* =====================================================
-           BOUTONS GOOGLE MAPS / WAZE
-           ===================================================== */
         .depart-navigation {
             display: flex;
             gap: 10px;
@@ -204,24 +203,24 @@
     <div class="conteneur">
 
         <!-- TITRE -->
-        <h1 id="nom">Chargement...</h1>
+        <div class="texte-niveau1" id="nom">Chargement...</div>
 
         <!-- CARACTÉRISTIQUES -->
         <div class="caracteristiques">
 
             <div class="caracteristique">
-                <div class="valeur" id="distance">-</div>
-                <div class="libelle">Distance</div>
+                <div class="texte-niveau2" id="distance">-</div>
+                <div class="texte-niveau3 libelle">Distance</div>
             </div>
 
             <div class="caracteristique">
-                <div class="valeur" id="duree">-</div>
-                <div class="libelle">Durée</div>
+                <div class="texte-niveau2" id="duree">-</div>
+                <div class="texte-niveau3 libelle">Durée</div>
             </div>
 
             <div class="caracteristique">
-                <div class="valeur" id="denivele">-</div>
-                <div class="libelle">Dénivelé positif</div>
+                <div class="texte-niveau2" id="denivele">-</div>
+                <div class="texte-niveau3 libelle">Dénivelé positif</div>
             </div>
 
         </div>
@@ -229,9 +228,9 @@
         <div class="depart">
 
             <div class="depart-texte">
-				<strong>POINT DE DEPART</strong><br>
-				<span id="lieu">-</span><br>
-				<span id="adresse">-</span>
+				<div class="texte-niveau2">POINT DE DEPART</div>
+				<div class="texte-niveau3" id="lieu">-</div>
+				<div class="texte-niveau3" id="adresse">-</div>
             </div>
 
             <div class="depart-navigation">

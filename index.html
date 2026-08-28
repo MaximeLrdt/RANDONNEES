@@ -23,19 +23,26 @@
         }
 
         .texte-niveau1 {
-            text-align: center;
             font-size: 21px;
         }
 		
 		.texte-niveau2 {            
 			font-size: 17px;
-            font-weight: bold;
         }
 		
 		.texte-niveau3 {
 			font-size: 13px;
         }
+		
+		
+		.texte-centre {
+			text-align: center;
+		}
 
+		.texte-gras {
+			font-weight: bold;
+		}
+		
         .caracteristiques {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -117,7 +124,6 @@
 			text-align: center;
 			text-decoration: none;
 			border-radius: 8px;
-			font-size: 16px;
 		}
 
 		.bouton.plein-ecran {
@@ -128,7 +134,6 @@
 			background: rgba(0, 0, 0, 0.75);
 			color: white;
 			border-radius: 6px;
-			font-size: 20px;
 		}
 
 		.logo-navigation {
@@ -203,24 +208,24 @@
     <div class="conteneur">
 
         <!-- TITRE -->
-        <div class="texte-niveau1" id="nom">Chargement...</div>
+        <div class="texte-niveau1 texte-centre texte-gras" id="nom">Chargement...</div>
 
         <!-- CARACTÉRISTIQUES -->
         <div class="caracteristiques">
 
             <div class="caracteristique">
-                <div class="texte-niveau2" id="distance">-</div>
-                <div class="texte-niveau3 libelle">Distance</div>
+                <div class="texte-niveau2 texte-centre texte-gras" id="distance">-</div>
+                <div class="texte-niveau3 texte-centre libelle">Distance</div>
             </div>
 
             <div class="caracteristique">
-                <div class="texte-niveau2" id="duree">-</div>
-                <div class="texte-niveau3 libelle">Durée</div>
+                <div class="texte-niveau2 texte-centre texte-gras" id="duree">-</div>
+                <div class="texte-niveau3 texte-centre libelle">Durée</div>
             </div>
 
             <div class="caracteristique">
-                <div class="texte-niveau2" id="denivele">-</div>
-                <div class="texte-niveau3 libelle">Dénivelé positif</div>
+                <div class="texte-niveau2 texte-centre texte-gras" id="denivele">-</div>
+                <div class="texte-niveau3 texte-centre libelle">Dénivelé positif</div>
             </div>
 
         </div>
@@ -228,7 +233,7 @@
         <div class="depart">
 
             <div class="depart-texte">
-				<div class="texte-niveau2">POINT DE DEPART</div>
+				<div class="texte-niveau2 texte-gras">POINT DE DEPART</div>
 				<div class="texte-niveau3" id="lieu">-</div>
 				<div class="texte-niveau3" id="adresse">-</div>
             </div>
@@ -252,14 +257,14 @@
 
             <img id="carte" class="carte" alt="Carte de la randonnée">
 
-            <button id="boutonPleinEcran" class="bouton plein-ecran">
+            <button id="boutonPleinEcran" class="bouton plein-ecran texte-niveau1">
                 ⛶
             </button>
 
         </div>
 
         <!-- TÉLÉCHARGEMENT GPX -->
-        <a id="telecharger" class="bouton telecharger-gpx">
+        <a id="telecharger" class="bouton telecharger-gpx texte-niveau2">
 
             <span class="icone-telechargement">
 

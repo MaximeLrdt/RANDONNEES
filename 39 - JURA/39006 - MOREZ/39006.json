@@ -1,0 +1,14 @@
+{
+  "nom": "39006 - MOREZ",
+  "code": "39006",
+  "distance_km": 4.9,
+  "duree_minutes": 100,
+  "denivele_positif_m": 69,
+
+  "depart": {
+    "lieu_dit": "Parking Musée de la Lunette",
+    "adresse": "1 Quai des Écoles - 39400 Morez",
+    "latitude": 46.5209, 
+    "longitude": 6.0226
+  }
+}

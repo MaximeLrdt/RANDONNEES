@@ -3,7 +3,8 @@ const chemins = {
     "39002": "39 - JURA/39002 - LACS ILAY + MACLU/",
     "39003": "39 - JURA/39003 - CASCADES HERISSON/",
     "39004": "39 - JURA/39004 - LACS ILAY + MACLU + NARLAY/",
-    "39005": "39 - JURA/39005 - LAC ABBAYE/"
+    "39005": "39 - JURA/39005 - LAC ABBAYE/",
+	"39006": "39 - JURA/39006 - MOREZ"
 };
 
 const elements = {

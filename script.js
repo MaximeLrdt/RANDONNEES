@@ -4,7 +4,9 @@ const chemins = {
     "39003": "39 - JURA/39003 - CASCADES HERISSON/",
     "39004": "39 - JURA/39004 - LACS ILAY + MACLU + NARLAY/",
     "39005": "39 - JURA/39005 - LAC ABBAYE/",
-	"39006": "39 - JURA/39006 - MOREZ/"
+	"39006": "39 - JURA/39006 - MOREZ/",
+	"39007": "39 - JURA/39007 - CASCADE BILLAUDE/",
+	"39008": "39 - JURA/39008 - LAC ABBAYE/"
 };
 
 const elements = {
@@ -81,7 +83,7 @@ async function chargerRandonnee() {
 
     try {
         const base = dossier + code;
-        const reponse = await fetch(base + "9.json");
+        const reponse = await fetch(base + "9 - infos.json");
 
         if (!reponse.ok) {
             throw new Error("JSON introuvable");

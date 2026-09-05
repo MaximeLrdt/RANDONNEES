@@ -1,0 +1,14 @@
+{
+  "nom": "39008 - LAC ABBAYE",
+  "code": "39008",
+  "distance_km": 2.7,
+  "duree_minutes": 60,
+  "denivele_positif_m": 40,
+
+  "depart": {
+    "lieu_dit": "Belvédère du Moulin",
+    "adresse": "39150 Grande-Rivière Château",
+    "latitude": 46.5207, 
+    "longitude": 5.9129
+  }
+}

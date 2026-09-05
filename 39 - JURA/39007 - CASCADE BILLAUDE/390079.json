@@ -1,0 +1,14 @@
+{
+  "nom": "39007 - CASCADE BILLAUDE",
+  "code": "39007",
+  "distance_km": 5.5,
+  "duree_minutes": 110,
+  "denivele_positif_m": 121,
+
+  "depart": {
+    "lieu_dit": "Parking de la Billaude",
+    "adresse": "8B Rte des Cascades - 39300 Le Vaudioux",
+    "latitude": 46.6815, 
+    "longitude": 5.9368     
+  }
+}

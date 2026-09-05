@@ -81,7 +81,7 @@ async function chargerRandonnee() {
 
     try {
         const base = dossier + code;
-        const reponse = await fetch(base + ".json");
+        const reponse = await fetch(base + "9.json");
 
         if (!reponse.ok) {
             throw new Error("JSON introuvable");
